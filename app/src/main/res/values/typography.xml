@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Display5">
+        <item name="fontFamily">@font/oneshinhan_bold</item>
+        <item name="android:textSize">25dp</item>
+    </style>
+
+    <style name="Display5_long">
+        <item name="fontFamily">@font/oneshinhan_medium</item>
+        <item name="android:textSize">25dp</item>
+    </style>
+
+    <style name="Display4">
+        <item name="fontFamily">@font/oneshinhan_medium</item>
+        <item name="android:textSize">22dp</item>
+    </style>
+
+    <style name="Display6">
+        <item name="fontFamily">@font/oneshinhan_medium</item>
+        <item name="android:textSize">20dp</item>
+    </style>
+
+    <style name="Display6_light">
+        <item name="fontFamily">@font/oneshinhan_medium</item>
+        <item name="android:textSize">20dp</item>
+    </style>
+
+    <style name="Headline">
+        <item name="fontFamily">@font/oneshinhan_medium</item>
+        <item name="android:textSize">18dp</item>
+    </style>
+
+    <style name="Subhead4">
+        <item name="fontFamily">@font/oneshinhan_medium</item>
+        <item name="android:textSize">16dp</item>
+    </style>
+
+    <style name="Subhead3">
+        <item name="fontFamily">@font/oneshinhan_medium</item>
+        <item name="android:textSize">14dp</item>
+    </style>
+
+    <style name="Subhead2">
+        <item name="fontFamily">@font/oneshinhan_medium</item>
+        <item name="android:textSize">13dp</item>
+    </style>
+
+    <style name="Subhead2_long">
+        <item name="fontFamily">@font/oneshinhan_medium</item>
+        <item name="android:textSize">13dp</item>
+    </style>
+
+    <style name="Subhead1">
+        <item name="fontFamily">@font/oneshinhan_medium</item>
+        <item name="android:textSize">12dp</item>
+    </style>
+
+    <style name="Caption2">
+        <item name="fontFamily">@font/oneshinhan_medium</item>
+        <item name="android:textSize">13dp</item>
+    </style>
+
+    <style name="Caption1">
+        <item name="fontFamily">@font/oneshinhan_medium</item>
+        <item name="android:textSize">9dp</item>
+    </style>
+
+    <style name="Body6">
+        <item name="fontFamily">@font/oneshinhan_light</item>
+        <item name="android:textSize">14dp</item>
+    </style>
+
+    <style name="Body5">
+        <item name="fontFamily">@font/oneshinhan_medium</item>
+        <item name="android:textSize">13dp</item>
+    </style>
+
+    <style name="Body4">
+        <item name="fontFamily">@font/oneshinhan_light</item>
+        <item name="android:textSize">12dp</item>
+    </style>
+
+    <style name="Body3">
+        <item name="fontFamily">@font/oneshinhan_medium</item>
+        <item name="android:textSize">11dp</item>
+    </style>
+
+    <style name="Body2">
+        <item name="fontFamily">@font/oneshinhan_light</item>
+        <item name="android:textSize">11dp</item>
+    </style>
+
+    <style name="Body1">
+        <item name="fontFamily">@font/oneshinhan_light</item>
+        <item name="android:textSize">10dp</item>
+    </style>
+
+</resources>
