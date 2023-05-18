@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingHorizontal="20dp"
+    tools:context=".HomeFragment">
+
+    <View
+        android:id="@+id/adView"
+        android:layout_width="0dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="7dp"
+        android:background="@drawable/shape_radius14_beige100"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/ivAdImage"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="18dp"
+        android:src="@drawable/ad_sample"
+        app:layout_constraintBottom_toBottomOf="@id/adView"
+        app:layout_constraintStart_toStartOf="@id/adView"
+        app:layout_constraintTop_toTopOf="@id/adView" />
+
+    <TextView
+        android:id="@+id/tvAdTitle"
+        style="@style/Body2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:text="@string/ad_sample_title"
+        app:layout_constraintStart_toEndOf="@id/ivAdImage"
+        app:layout_constraintTop_toTopOf="@id/ivAdImage" />
+
+    <TextView
+        android:id="@+id/tvAdDescription"
+        style="@style/Subhead2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/ad_sample_description"
+        app:layout_constraintStart_toEndOf="@id/ivAdImage"
+        app:layout_constraintStart_toStartOf="@id/tvAdTitle"
+        app:layout_constraintTop_toBottomOf="@id/tvAdTitle" />
+
+    <View
+        android:id="@+id/myAccountView"
+        android:layout_width="0dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="18dp"
+        android:background="@drawable/shape_radius14_white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/adView" />
+
+    <TextView
+        android:id="@+id/tvMyAccount"
+        style="@style/Subhead3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:text="@string/my_account"
+        app:layout_constraintBottom_toBottomOf="@id/myAccountView"
+        app:layout_constraintStart_toStartOf="@id/myAccountView"
+        app:layout_constraintTop_toTopOf="@id/myAccountView" />
+
+    <TextView
+        android:id="@+id/tvAllAccount"
+        style="@style/Subhead2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/all_account_look"
+        android:textColor="@color/blue_500"
+        app:layout_constraintBottom_toBottomOf="@id/tvMyAccount"
+        app:layout_constraintEnd_toEndOf="@id/myAccountView"
+        app:layout_constraintTop_toTopOf="@id/tvMyAccount" />
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/vpMyAccount"
+        android:layout_width="0dp"
+        android:layout_height="256dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/myAccountView" />
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/indicator"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        app:layout_constraintEnd_toEndOf="@id/vpMyAccount"
+        app:layout_constraintStart_toStartOf="@id/vpMyAccount"
+        app:layout_constraintTop_toBottomOf="@id/vpMyAccount" />
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

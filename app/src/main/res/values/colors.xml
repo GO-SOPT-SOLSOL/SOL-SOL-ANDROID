@@ -13,5 +13,6 @@
     <color name="gray_warm_400">#666666</color>
     <color name="gray_400">#575C61</color>
     <color name="gray_600">#121518</color>
+    <color name="beige_100">#FAEFE2</color>
     <color name="white">#FFFFFFFF</color>
 </resources>

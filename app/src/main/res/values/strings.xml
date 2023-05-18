@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">SolSolAndroid</string>
+    <string name="home">홈</string>
+    <string name="money_bus">머니버스</string>
+    <string name="product">상품</string>
+    <string name="benefit">혜택</string>
+    <string name="all_menu">전체 메뉴</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="ad_sample_title">평소 입는 옷으로 꾸꾸 하객룩 완성?</string>
+    <string name="ad_sample_description">결혼식에 입기 좋은 남녀 코디법</string>
+    <string name="my_account">내 계좌</string>
+    <string name="all_account_look">전체보기</string>
 </resources>
