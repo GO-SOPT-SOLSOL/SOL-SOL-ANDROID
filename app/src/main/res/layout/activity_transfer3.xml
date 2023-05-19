@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/btn_back_transfer3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/white"
+        android:src="@drawable/icon_arrow_left"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_user_name_transfer3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="19dp"
+        android:text="@string/transfer3_user"
+        android:textColor="@color/black"
+        android:theme="@style/Subhead3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_back_transfer3" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="19dp"
+        android:text="@string/transfer3_nim"
+        android:textColor="@color/black"
+        android:theme="@style/Subhead3"
+        app:layout_constraintLeft_toRightOf="@+id/tv_user_name_transfer3"
+        app:layout_constraintTop_toBottomOf="@+id/btn_back_transfer3" />
+
+    <TextView
+        android:id="@+id/tv_account_name_transfer3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:text="@string/transfer3_account_name"
+        android:textColor="@color/gray_400"
+        android:theme="@style/Body5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_user_name_transfer3" />
+
+    <TextView
+        android:id="@+id/tv_account_number_transfer3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/transfer3_account_number"
+        android:textColor="@color/gray_400"
+        android:theme="@style/Body5"
+        app:layout_constraintLeft_toRightOf="@+id/tv_account_name_transfer3"
+        app:layout_constraintTop_toBottomOf="@+id/tv_user_name_transfer3" />
+
+    <TextView
+        android:id="@+id/tv_send_money_transfer3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="42dp"
+        android:text="@string/transfer3_send_money"
+        android:textColor="@color/gray_600"
+        android:theme="@style/Display5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_account_number_transfer3" />
+
+    <TextView
+        android:id="@+id/tv_send_money_messeage_transfer3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="@string/transfer3_send_messeage"
+        android:textColor="@color/gray_400"
+        android:theme="@style/Body5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_send_money_transfer3" />
+
+    <LinearLayout
+        android:id="@+id/ll_bank_transfer3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/rectangle_round_18"
+        android:backgroundTint="@color/gray_50"
+        android:orientation="horizontal"
+        android:paddingLeft="13dp"
+        android:paddingTop="12dp"
+        android:paddingRight="14dp"
+        android:paddingBottom="13dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_send_money_messeage_transfer3">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="신한"
+            android:textColor="@color/gray_600"
+            android:theme="@style/Body4" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:text="110-345-961307"
+            android:textColor="@color/gray_600"
+            android:theme="@style/Body2" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="11dp"
+            android:text="3,773,400"
+            android:textColor="@color/gray_600"
+            android:theme="@style/Body3" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="원"
+            android:textColor="@color/gray_600"
+            android:theme="@style/Body3" />
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:layout_width="14dp"
+            android:layout_height="14dp"
+            android:layout_marginLeft="80dp"
+            android:adjustViewBounds="true"
+            android:backgroundTint="@color/white"
+            android:src="@drawable/icon_arrow_right" />
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_recipient_transfer3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="-1dp"
+        android:background="@drawable/edtitext1_border_transfer3"
+        android:paddingVertical="19dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ll_bank_transfer3">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:text="@string/transfer3_recipient"
+            android:textColor="@color/gray_400"
+            android:theme="@style/Body6"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_passbook_memo_transfer3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginVertical="-1dp"
+        android:background="@drawable/edtitext2_border_transfer3"
+        android:paddingVertical="19dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cl_recipient_transfer3">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:text="@string/transfer3_memos"
+            android:textColor="@color/gray_400"
+            android:theme="@style/Body6"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_charge_transfer3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="-1dp"
+        android:background="@drawable/edtitext3_border_transfer3"
+        android:paddingVertical="19dp"
+        app:layout_constraintTop_toBottomOf="@+id/cl_passbook_memo_transfer3">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:text="@string/transfer3_charge"
+            android:textColor="@color/gray_400"
+            android:theme="@style/Body6"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/transfer3_free"
+            android:textColor="@color/black"
+            android:theme="@style/Subhead3"
+            android:paddingRight="18dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <TextView
+        android:id="@+id/tv_information_transfer3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="41dp"
+        android:text="@string/transfer3_information"
+        android:textColor="@color/black"
+        android:theme="@style/Body5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cl_charge_transfer3" />
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:layout_width="14dp"
+        android:layout_height="14dp"
+        android:layout_marginLeft="2dp"
+        android:layout_marginTop="41dp"
+        android:backgroundTint="@color/white"
+        android:src="@drawable/icon_arrow_bottom"
+        app:layout_constraintLeft_toRightOf="@+id/tv_information_transfer3"
+        app:layout_constraintTop_toBottomOf="@id/cl_charge_transfer3" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_plus_send_transfer3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginBottom="15dp"
+        android:background="@drawable/rectangle_round_12"
+        android:backgroundTint="@color/gray_100"
+        android:paddingHorizontal="38dp"
+        android:text="@string/transfer3_plus_send"
+        android:textColor="@color/black"
+        android:theme="@style/Headline"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginBottom="15dp"
+        android:background="@drawable/rectangle_round_12"
+        android:backgroundTint="@color/blue_500"
+        android:paddingHorizontal="38dp"
+        android:text="@string/transfer3_send"
+        android:textColor="@color/white"
+        android:theme="@style/Headline"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/btn_plus_send_transfer3" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
