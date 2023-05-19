@@ -4,6 +4,16 @@
     <color name="blue_100">#E7F0FB</color>
     <color name="blue_500">#306FE1</color>
     <color name="blue_600">#254EBE</color>
+
+    <color name="light_blue_100">#EFF9FE</color>
+    <color name="light_blue_500">#4192D3</color>
+
+    <color name="indigo_100">#EFF5FD</color>
+    <color name="indigo_500">#3A60E5</color>
+
+    <color name="violet_100">#F4F2FB</color>
+    <color name="violet_500">#5443C2</color>
+
     <color name="gray_50">#F8F9FC</color>
     <color name="gray_100">#F3F6FA</color>
     <color name="gray_150">#E5E9ED</color>
@@ -13,6 +23,8 @@
     <color name="gray_warm_400">#666666</color>
     <color name="gray_400">#575C61</color>
     <color name="gray_600">#121518</color>
+
     <color name="beige_100">#FAEFE2</color>
+
     <color name="white">#FFFFFFFF</color>
 </resources>

@@ -1,101 +1,417 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:paddingHorizontal="20dp"
-    tools:context=".HomeFragment">
+    android:layout_height="match_parent">
 
-    <View
-        android:id="@+id/adView"
-        android:layout_width="0dp"
-        android:layout_height="70dp"
-        android:layout_marginTop="7dp"
-        android:background="@drawable/shape_radius14_beige100"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/ivAdImage"
-        android:layout_width="36dp"
-        android:layout_height="36dp"
-        android:layout_marginStart="18dp"
-        android:src="@drawable/ad_sample"
-        app:layout_constraintBottom_toBottomOf="@id/adView"
-        app:layout_constraintStart_toStartOf="@id/adView"
-        app:layout_constraintTop_toTopOf="@id/adView" />
-
-    <TextView
-        android:id="@+id/tvAdTitle"
-        style="@style/Body2"
-        android:layout_width="wrap_content"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
-        android:text="@string/ad_sample_title"
-        app:layout_constraintStart_toEndOf="@id/ivAdImage"
-        app:layout_constraintTop_toTopOf="@id/ivAdImage" />
+        android:paddingHorizontal="20dp"
+        tools:context=".HomeFragment">
 
-    <TextView
-        android:id="@+id/tvAdDescription"
-        style="@style/Subhead2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/ad_sample_description"
-        app:layout_constraintStart_toEndOf="@id/ivAdImage"
-        app:layout_constraintStart_toStartOf="@id/tvAdTitle"
-        app:layout_constraintBottom_toBottomOf="@id/ivAdImage" />
+        <View
+            android:id="@+id/adView"
+            android:layout_width="0dp"
+            android:layout_height="70dp"
+            android:layout_marginTop="7dp"
+            android:background="@drawable/shape_radius14_beige100"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <View
-        android:id="@+id/myAccountView"
-        android:layout_width="0dp"
-        android:layout_height="49dp"
-        android:layout_marginTop="18dp"
-        android:background="@drawable/shape_radius14_white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/adView" />
+        <ImageView
+            android:id="@+id/ivAdImage"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_marginStart="18dp"
+            android:src="@drawable/img_ad_sample"
+            app:layout_constraintBottom_toBottomOf="@id/adView"
+            app:layout_constraintStart_toStartOf="@id/adView"
+            app:layout_constraintTop_toTopOf="@id/adView" />
 
-    <TextView
-        android:id="@+id/tvMyAccount"
-        style="@style/Subhead3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:text="@string/my_account"
-        app:layout_constraintBottom_toBottomOf="@id/myAccountView"
-        app:layout_constraintStart_toStartOf="@id/myAccountView"
-        app:layout_constraintTop_toTopOf="@id/myAccountView" />
+        <TextView
+            android:id="@+id/tvAdTitle"
+            style="@style/Body2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:text="@string/ad_sample_title"
+            app:layout_constraintBottom_toTopOf="@id/tvAdDescription"
+            app:layout_constraintStart_toEndOf="@id/ivAdImage"
+            app:layout_constraintTop_toTopOf="@id/ivAdImage" />
 
-    <TextView
-        android:id="@+id/tvAllAccount"
-        style="@style/Subhead2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/all_account_look"
-        android:textColor="@color/blue_500"
-        app:layout_constraintBottom_toBottomOf="@id/tvMyAccount"
-        app:layout_constraintEnd_toEndOf="@id/myAccountView"
-        app:layout_constraintTop_toTopOf="@id/tvMyAccount" />
+        <TextView
+            android:id="@+id/tvAdDescription"
+            style="@style/Subhead2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/ad_sample_description"
+            app:layout_constraintBottom_toBottomOf="@id/ivAdImage"
+            app:layout_constraintStart_toEndOf="@id/ivAdImage"
+            app:layout_constraintStart_toStartOf="@id/tvAdTitle"
+            app:layout_constraintTop_toBottomOf="@id/tvAdTitle" />
 
-    <androidx.viewpager2.widget.ViewPager2
-        android:id="@+id/vpMyAccount"
-        android:layout_width="0dp"
-        android:layout_height="256dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/myAccountView" />
+        <View
+            android:id="@+id/myAccountView"
+            android:layout_width="0dp"
+            android:layout_height="49dp"
+            android:layout_marginTop="18dp"
+            android:background="@drawable/shape_radius14_white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/adView" />
 
-    <com.google.android.material.tabs.TabLayout
-        android:id="@+id/indicator"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom"
-        app:layout_constraintEnd_toEndOf="@id/vpMyAccount"
-        app:layout_constraintStart_toStartOf="@id/vpMyAccount"
-        app:layout_constraintTop_toBottomOf="@id/vpMyAccount" />
+        <TextView
+            android:id="@+id/tvMyAccount"
+            style="@style/Subhead3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:text="@string/my_account"
+            app:layout_constraintBottom_toBottomOf="@id/myAccountView"
+            app:layout_constraintStart_toStartOf="@id/myAccountView"
+            app:layout_constraintTop_toTopOf="@id/myAccountView" />
 
+        <TextView
+            android:id="@+id/tvAllAccount"
+            style="@style/Subhead2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/all_account_look"
+            android:textColor="@color/blue_500"
+            app:layout_constraintBottom_toBottomOf="@id/tvMyAccount"
+            app:layout_constraintEnd_toEndOf="@id/myAccountView"
+            app:layout_constraintTop_toTopOf="@id/tvMyAccount" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/vpMyAccount"
+            android:layout_width="0dp"
+            android:layout_height="256dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/myAccountView" />
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/indicator"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            app:layout_constraintEnd_toEndOf="@id/vpMyAccount"
+            app:layout_constraintStart_toStartOf="@id/vpMyAccount"
+            app:layout_constraintTop_toBottomOf="@id/vpMyAccount" />
+
+        <View
+            android:id="@+id/transactionView"
+            android:layout_width="0dp"
+            android:layout_height="44dp"
+            android:layout_marginTop="31dp"
+            android:background="@drawable/shape_radius14_white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/indicator" />
+
+        <TextView
+            android:id="@+id/tvSinhanPlus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/shape_radius14_light100"
+            android:drawablePadding="7dp"
+            android:paddingVertical="7dp"
+            android:paddingStart="9dp"
+            android:paddingEnd="14dp"
+            android:text="@string/sinhan_plus"
+            android:textColor="@color/light_blue_500"
+            android:theme="@style/Subhead2"
+            app:drawableStartCompat="@drawable/ic_sinhan_plus"
+            app:layout_constraintBottom_toBottomOf="@id/transactionView"
+            app:layout_constraintCircleRadius="14dp"
+            app:layout_constraintEnd_toStartOf="@id/tvCard"
+            app:layout_constraintStart_toStartOf="@id/transactionView"
+            app:layout_constraintTop_toTopOf="@id/transactionView" />
+
+        <TextView
+            android:id="@+id/tvCard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/shape_radius14_light100"
+            android:paddingHorizontal="16dp"
+            android:paddingVertical="7dp"
+            android:text="@string/card"
+            android:textColor="@color/light_blue_500"
+            android:theme="@style/Subhead2"
+            app:layout_constraintBottom_toBottomOf="@id/transactionView"
+            app:layout_constraintCircleRadius="14dp"
+            app:layout_constraintEnd_toStartOf="@id/tvStock"
+            app:layout_constraintStart_toEndOf="@id/tvSinhanPlus"
+            app:layout_constraintTop_toTopOf="@id/transactionView" />
+
+        <TextView
+            android:id="@+id/tvStock"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/shape_radius14_indigo100"
+            android:paddingHorizontal="16dp"
+            android:paddingVertical="7dp"
+            android:text="@string/stock"
+            android:textColor="@color/indigo_500"
+            android:theme="@style/Subhead2"
+            app:layout_constraintBottom_toBottomOf="@id/transactionView"
+            app:layout_constraintCircleRadius="14dp"
+            app:layout_constraintEnd_toStartOf="@id/tvInsurance"
+            app:layout_constraintStart_toEndOf="@id/tvCard"
+            app:layout_constraintTop_toTopOf="@id/transactionView" />
+
+        <TextView
+            android:id="@+id/tvInsurance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/shape_radius14_indigo100"
+            android:paddingHorizontal="16dp"
+            android:paddingVertical="7dp"
+            android:text="@string/insurance"
+            android:textColor="@color/violet_500"
+            android:theme="@style/Subhead2"
+            app:layout_constraintBottom_toBottomOf="@id/transactionView"
+            app:layout_constraintCircleRadius="14dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/tvStock"
+            app:layout_constraintTop_toTopOf="@id/transactionView" />
+
+        <View
+            android:id="@+id/pullLogoView"
+            android:layout_width="0dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="18dp"
+            android:background="@drawable/shape_radius14_white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/transactionView" />
+
+        <TextView
+            android:id="@+id/tvPullTile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:text="@string/ride_takeout"
+            android:theme="@style/Subhead3"
+            app:layout_constraintStart_toStartOf="@id/pullLogoView"
+            app:layout_constraintTop_toTopOf="@id/ivPullLogo" />
+
+        <TextView
+            android:id="@+id/tvPullDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="@string/eye_tasty_order"
+            android:theme="@style/Subhead1"
+            app:layout_constraintBottom_toBottomOf="@id/ivPullLogo"
+            app:layout_constraintStart_toStartOf="@id/tvPullTile" />
+
+        <ImageView
+            android:id="@+id/ivPullLogo"
+            android:layout_width="99dp"
+            android:layout_height="43dp"
+            android:layout_marginEnd="22dp"
+            android:src="@drawable/img_pull_logo"
+            app:layout_constraintBottom_toBottomOf="@id/pullLogoView"
+            app:layout_constraintEnd_toEndOf="@id/pullLogoView"
+            app:layout_constraintTop_toTopOf="@id/pullLogoView" />
+
+        <androidx.constraintlayout.helper.widget.Flow
+            android:id="@+id/menuFlow"
+            android:layout_width="0dp"
+            android:layout_height="165dp"
+            android:layout_marginTop="18dp"
+            app:constraint_referenced_ids="
+            clCupMenu, clSoltipsMenu, clStoryBankMenu, clWalletMenu,
+            clBaseballMenu, clCardMenu, clStockMenu, clPrivacyMenu"
+            app:flow_horizontalGap="10dp"
+            app:flow_maxElementsWrap="4"
+            app:flow_verticalGap="9dp"
+            app:flow_wrapMode="chain"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/pullLogoView" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clCupMenu"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/shape_radius14_white"
+            tools:ignore="MissingConstraints">
+
+            <ImageView
+                android:id="@+id/ivCupMenu"
+                style="@style/Theme.SolSolAndroid.HomeMenuImageView"
+                android:src="@drawable/img_menu_cup"
+                tools:ignore="MissingConstraints" />
+
+            <TextView
+                style="@style/Theme.SolSolAndroid.HomeMenuTextView"
+                android:layout_marginTop="6dp"
+                android:text="@string/return_cup"
+                app:layout_constraintTop_toBottomOf="@id/ivCupMenu"
+                tools:ignore="MissingConstraints" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clSoltipsMenu"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/shape_radius14_white"
+            tools:ignore="MissingConstraints">
+
+            <ImageView
+                android:id="@+id/ivSoltipsMenu"
+                style="@style/Theme.SolSolAndroid.HomeMenuImageView"
+                android:src="@drawable/img_menu_soltip"
+                tools:ignore="MissingConstraints" />
+
+            <TextView
+                style="@style/Theme.SolSolAndroid.HomeMenuTextView"
+                android:layout_marginTop="6dp"
+                android:text="@string/soltips"
+                app:layout_constraintTop_toBottomOf="@id/ivSoltipsMenu"
+                tools:ignore="MissingConstraints" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clStoryBankMenu"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/shape_radius14_white"
+            tools:ignore="MissingConstraints">
+
+            <ImageView
+                android:id="@+id/ivStoryBankMenu"
+                style="@style/Theme.SolSolAndroid.HomeMenuImageView"
+                android:src="@drawable/img_menu_story_bank"
+                tools:ignore="MissingConstraints" />
+
+            <TextView
+                style="@style/Theme.SolSolAndroid.HomeMenuTextView"
+                android:layout_marginTop="6dp"
+                android:text="@string/story_bank"
+                app:layout_constraintTop_toBottomOf="@id/ivStoryBankMenu"
+                tools:ignore="MissingConstraints" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clWalletMenu"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/shape_radius14_white"
+            tools:ignore="MissingConstraints">
+
+            <ImageView
+                android:id="@+id/ivWalletMenu"
+                style="@style/Theme.SolSolAndroid.HomeMenuImageView"
+                android:src="@drawable/img_menu_wallet"
+                tools:ignore="MissingConstraints" />
+
+            <TextView
+                style="@style/Theme.SolSolAndroid.HomeMenuTextView"
+                android:layout_marginTop="6dp"
+                android:text="@string/sol_wallet"
+                app:layout_constraintTop_toBottomOf="@id/ivWalletMenu"
+                tools:ignore="MissingConstraints" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clBaseballMenu"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/shape_radius14_white"
+            tools:ignore="MissingConstraints">
+
+            <ImageView
+                android:id="@+id/ivBaseballMenu"
+                style="@style/Theme.SolSolAndroid.HomeMenuImageView"
+                android:src="@drawable/img_menu_baseball"
+                tools:ignore="MissingConstraints" />
+
+            <TextView
+                style="@style/Theme.SolSolAndroid.HomeMenuTextView"
+                android:layout_marginTop="6dp"
+                android:text="@string/sol_baseball"
+                app:layout_constraintTop_toBottomOf="@id/ivBaseballMenu"
+                tools:ignore="MissingConstraints" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clCardMenu"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/shape_radius14_white"
+            tools:ignore="MissingConstraints">
+
+            <ImageView
+                android:id="@+id/ivCardMenu"
+                style="@style/Theme.SolSolAndroid.HomeMenuImageView"
+                android:src="@drawable/img_menu_card"
+                tools:ignore="MissingConstraints" />
+
+            <TextView
+                style="@style/Theme.SolSolAndroid.HomeMenuTextView"
+                android:layout_marginTop="6dp"
+                android:text="@string/card_allow"
+                app:layout_constraintTop_toBottomOf="@id/ivCardMenu"
+                tools:ignore="MissingConstraints" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clStockMenu"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/shape_radius14_white"
+            tools:ignore="MissingConstraints">
+
+            <ImageView
+                android:id="@+id/ivStockMenu"
+                style="@style/Theme.SolSolAndroid.HomeMenuImageView"
+                android:src="@drawable/img_menu_stock"
+                tools:ignore="MissingConstraints" />
+
+            <TextView
+                style="@style/Theme.SolSolAndroid.HomeMenuTextView"
+                android:layout_marginTop="6dp"
+                android:text="@string/current_stock"
+                app:layout_constraintTop_toBottomOf="@id/ivStockMenu"
+                tools:ignore="MissingConstraints" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clPrivacyMenu"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/shape_radius14_white"
+            tools:ignore="MissingConstraints">
+
+            <ImageView
+                android:id="@+id/ivPrivacyMenu"
+                style="@style/Theme.SolSolAndroid.HomeMenuImageView"
+                android:src="@drawable/img_menu_privacy"
+                tools:ignore="MissingConstraints" />
+
+            <TextView
+                style="@style/Theme.SolSolAndroid.HomeMenuTextView"
+                android:layout_marginTop="6dp"
+                android:text="@string/co_privacy"
+                app:layout_constraintTop_toBottomOf="@id/ivPrivacyMenu"
+                tools:ignore="MissingConstraints" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

@@ -1,7 +1,7 @@
 package com.solosol.solsolandroid
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.solosol.solsolandroid.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -23,6 +23,7 @@ class MainActivity : AppCompatActivity() {
                     supportFragmentManager.beginTransaction().replace(binding.container.id, HomeFragment()).commit()
                     true
                 }
+
 
                 else -> false
             }

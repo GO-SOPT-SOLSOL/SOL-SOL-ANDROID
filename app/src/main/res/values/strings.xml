@@ -5,10 +5,22 @@
     <string name="product">상품</string>
     <string name="benefit">혜택</string>
     <string name="all_menu">전체 메뉴</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="ad_sample_title">평소 입는 옷으로 꾸꾸 하객룩 완성?</string>
     <string name="ad_sample_description">결혼식에 입기 좋은 남녀 코디법</string>
     <string name="my_account">내 계좌</string>
     <string name="all_account_look">전체보기</string>
+    <string name="sinhan_plus">신한플러스</string>
+    <string name="card">카드</string>
+    <string name="stock">증권</string>
+    <string name="insurance">보험</string>
+    <string name="ride_takeout">배달/포장</string>
+    <string name="eye_tasty_order">눈으로 즐기는 미식 주문</string>
+    <string name="return_cup">컵 반환</string>
+    <string name="soltips">쏠팁쓰</string>
+    <string name="story_bank">스토리뱅크</string>
+    <string name="sol_wallet">쏠지갑</string>
+    <string name="sol_baseball">쏠야구</string>
+    <string name="card_allow">카드 승인</string>
+    <string name="current_stock">주식 현재가</string>
+    <string name="co_privacy">공동인증서</string>
 </resources>
