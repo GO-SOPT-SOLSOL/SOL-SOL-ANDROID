@@ -45,7 +45,7 @@
         android:text="@string/ad_sample_description"
         app:layout_constraintStart_toEndOf="@id/ivAdImage"
         app:layout_constraintStart_toStartOf="@id/tvAdTitle"
-        app:layout_constraintTop_toBottomOf="@id/tvAdTitle" />
+        app:layout_constraintBottom_toBottomOf="@id/ivAdImage" />
 
     <View
         android:id="@+id/myAccountView"
@@ -96,8 +96,6 @@
         app:layout_constraintEnd_toEndOf="@id/vpMyAccount"
         app:layout_constraintStart_toStartOf="@id/vpMyAccount"
         app:layout_constraintTop_toBottomOf="@id/vpMyAccount" />
-
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

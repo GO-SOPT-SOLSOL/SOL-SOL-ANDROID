@@ -14,8 +14,18 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        supportFragmentManager.beginTransaction().replace(binding.container.id, HomeFragment()).commit()
+
+
         binding.bottomNavigationView.setOnItemSelectedListener {
-            true
+            when(it.itemId){
+                R.id.navigationHome -> {
+                    supportFragmentManager.beginTransaction().replace(binding.container.id, HomeFragment()).commit()
+                    true
+                }
+
+                else -> false
+            }
         }
     }
 }
