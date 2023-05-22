@@ -15,12 +15,15 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         supportFragmentManager.beginTransaction().replace(binding.container.id, HomeFragment()).commit()
+        initBottomNav()
+    }
 
-
+    private fun initBottomNav() {
         binding.bottomNavigationView.setOnItemSelectedListener {
-            when(it.itemId){
+            when (it.itemId) {
                 R.id.navigationHome -> {
-                    supportFragmentManager.beginTransaction().replace(binding.container.id, HomeFragment()).commit()
+                    supportFragmentManager.beginTransaction()
+                        .replace(binding.container.id, HomeFragment()).commit()
                     true
                 }
 
