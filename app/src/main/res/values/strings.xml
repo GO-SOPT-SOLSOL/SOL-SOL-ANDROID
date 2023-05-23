@@ -23,4 +23,6 @@
     <string name="card_allow">카드 승인</string>
     <string name="current_stock">주식 현재가</string>
     <string name="co_privacy">공동인증서</string>
+    <string name="transfer">이체</string>
+    <string name="hey_young">헤이영 머니박스</string>
 </resources>

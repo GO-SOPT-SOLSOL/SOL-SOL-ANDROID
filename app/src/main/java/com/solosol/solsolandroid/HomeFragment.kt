@@ -35,6 +35,9 @@ class HomeFragment : Fragment() {
                     "1234-1234-1234", "우리은행", "1000000", listOf(
                         AccountItemData.PostItem(
                             "우리은행", "김솔", "1000000"
+                        ),
+                        AccountItemData.PostItem(
+                            "우리은행", "김솔", "1000000"
                         )
                     )
                 ),AccountItemData(

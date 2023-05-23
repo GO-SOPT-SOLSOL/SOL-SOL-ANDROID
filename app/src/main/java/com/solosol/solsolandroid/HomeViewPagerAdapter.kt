@@ -9,9 +9,14 @@ import com.solosol.solsolandroid.databinding.ItemAccountBinding
 
 class HomeViewPagerAdapter : ListAdapter<AccountItemData, HomeViewPagerAdapter.AccountViewHolder>(diffUtil) {
 
-    class AccountViewHolder(binding:ItemAccountBinding): RecyclerView.ViewHolder(binding.root) {
+    class AccountViewHolder(private val binding:ItemAccountBinding): RecyclerView.ViewHolder(binding.root) {
+        private val lastTransactionAdapter = LastTransactionAdapter()
         fun bind(item: AccountItemData) {
+            itemView.run {
+                binding.rvLastTransaction.adapter = lastTransactionAdapter
 
+                lastTransactionAdapter.submitList(item.lastPostList)
+            }
         }
     }
 
