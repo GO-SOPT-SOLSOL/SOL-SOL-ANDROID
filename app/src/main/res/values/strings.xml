@@ -25,4 +25,20 @@
     <string name="co_privacy">공동인증서</string>
     <string name="transfer">이체</string>
     <string name="hey_young">헤이영 머니박스</string>
+    <string name="title_activity_transfer3">Transfer3Activity</string>
+
+    <!-- transfer3 -->
+    <string name="transfer3_user">조정연</string>
+    <string name="transfer3_nim">님께</string>
+    <string name="transfer3_account_name">카카오뱅크</string>
+    <string name="transfer3_account_number">3333329999933</string>
+    <string name="transfer3_send_money">10,000원</string>
+    <string name="transfer3_send_messeage">보낼까요?</string>
+    <string name="transfer3_recipient">받는분 메모</string>
+    <string name="transfer3_memos">내통장 메모</string>
+    <string name ="transfer3_charge">수수료</string>
+    <string name="transfer3_free">면제</string>
+    <string name="transfer3_information">추가정보</string>
+    <string name="transfer3_send">이체</string>
+    <string name="transfer3_plus_send">추가이체</string>
 </resources>

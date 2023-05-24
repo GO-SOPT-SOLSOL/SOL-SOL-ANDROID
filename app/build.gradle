@@ -45,6 +45,8 @@ dependencies {
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.6.1'
+
 
     //fragment
     implementation "androidx.fragment:fragment-ktx:1.5.7"
@@ -55,9 +57,13 @@ dependencies {
     //retrofit
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
 
-    //okhttp
-    implementation 'com.squareup.okhttp3:okhttp:5.0.0-alpha.6'
-    implementation 'com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.6'
+    // define a BOM and its version
+    implementation(platform("com.squareup.okhttp3:okhttp-bom:4.10.0"))
+
+    // define any required OkHttp artifacts without version (BOM을 위에 명시했으니, 밑의 버전들은 BOM에 맞게 적용됩니다.)
+    implementation("com.squareup.okhttp3:okhttp")
+    implementation("com.squareup.okhttp3:logging-interceptor")
+
 
     //kotlin serialization
     implementation "org.jetbrains.kotlinx:kotlinx-serialization-json:1.5.1"
