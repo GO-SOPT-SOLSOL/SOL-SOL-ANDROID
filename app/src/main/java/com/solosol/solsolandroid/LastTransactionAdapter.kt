@@ -9,7 +9,8 @@ import com.solosol.solsolandroid.databinding.ItemLastAccountBinding
 
 class LastTransactionAdapter :
     ListAdapter<AccountItemData.PostItem, LastTransactionAdapter.ViewHolder>(diffUtil) {
-    class ViewHolder(private val binding: ItemLastAccountBinding) : RecyclerView.ViewHolder(binding.root) {
+    class ViewHolder(private val binding: ItemLastAccountBinding) :
+        RecyclerView.ViewHolder(binding.root) {
         fun bind(item: AccountItemData.PostItem) {
             itemView.run {
 

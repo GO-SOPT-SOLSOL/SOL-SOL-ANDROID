@@ -3,13 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:paddingHorizontal="20dp"
     android:layout_height="match_parent">
 
     <ImageView
         android:id="@+id/ivBankLogo"
         android:layout_width="36dp"
         android:layout_height="36dp"
-        android:layout_marginStart="20dp"
         android:layout_marginTop="18dp"
         android:src="@drawable/ic_launcher_background"
         app:layout_constraintStart_toStartOf="parent"
@@ -27,13 +27,24 @@
         app:layout_constraintTop_toTopOf="@id/ivBankLogo" />
 
     <TextView
+        android:id="@+id/tvAccountNumber"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@color/gray_warm_400"
         android:theme="@style/Body1"
         app:layout_constraintBottom_toBottomOf="@id/ivBankLogo"
         app:layout_constraintStart_toStartOf="@id/tvPageTitle"
-        tools:text="쏠편한 입출금통장(저축예금)" />
+        tools:text="신한 110-345-961307" />
+
+    <ImageView
+        android:id="@+id/ivCopy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:src="@drawable/ic_clip"
+        app:layout_constraintBottom_toBottomOf="@id/tvAccountNumber"
+        app:layout_constraintStart_toEndOf="@+id/tvAccountNumber"
+        app:layout_constraintTop_toTopOf="@id/tvAccountNumber" />
 
     <TextView
         android:id="@+id/tvMoney"
@@ -45,6 +56,16 @@
         app:layout_constraintStart_toStartOf="@id/ivBankLogo"
         app:layout_constraintTop_toBottomOf="@+id/ivBankLogo"
         tools:text="3,964,717원" />
+
+    <ImageView
+        android:id="@+id/ivRefresh"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="6dp"
+        android:src="@drawable/ic_refresh"
+        app:layout_constraintBottom_toBottomOf="@id/tvMoney"
+        app:layout_constraintStart_toEndOf="@id/tvMoney"
+        app:layout_constraintTop_toTopOf="@id/tvMoney" />
 
     <TextView
         android:id="@+id/tvTransfer"
@@ -77,7 +98,7 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvLastTransaction"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="43dp"
         android:layout_marginTop="20dp"
         android:orientation="horizontal"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"

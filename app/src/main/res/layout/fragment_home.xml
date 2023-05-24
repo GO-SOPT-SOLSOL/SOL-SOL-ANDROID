@@ -23,7 +23,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
-            android:id="@+id/ivAdImage"
+            android:id="@+id/ivBannerImage"
             android:layout_width="36dp"
             android:layout_height="36dp"
             android:layout_marginStart="18dp"
@@ -33,26 +33,32 @@
             app:layout_constraintTop_toTopOf="@id/adView" />
 
         <TextView
-            android:id="@+id/tvAdTitle"
+            android:id="@+id/tvBannerTitle"
             style="@style/Body2"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="15dp"
+            android:ellipsize="end"
+            android:maxLines="1"
             android:text="@string/ad_sample_title"
-            app:layout_constraintBottom_toTopOf="@id/tvAdDescription"
-            app:layout_constraintStart_toEndOf="@id/ivAdImage"
-            app:layout_constraintTop_toTopOf="@id/ivAdImage" />
+            app:layout_constraintBottom_toTopOf="@id/tvBannerContent"
+            app:layout_constraintEnd_toEndOf="@id/adView"
+            app:layout_constraintStart_toEndOf="@id/ivBannerImage"
+            app:layout_constraintTop_toTopOf="@id/ivBannerImage" />
 
         <TextView
-            android:id="@+id/tvAdDescription"
+            android:id="@+id/tvBannerContent"
             style="@style/Subhead2"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="1"
             android:text="@string/ad_sample_description"
-            app:layout_constraintBottom_toBottomOf="@id/ivAdImage"
-            app:layout_constraintStart_toEndOf="@id/ivAdImage"
-            app:layout_constraintStart_toStartOf="@id/tvAdTitle"
-            app:layout_constraintTop_toBottomOf="@id/tvAdTitle" />
+            app:layout_constraintBottom_toBottomOf="@id/ivBannerImage"
+            app:layout_constraintEnd_toEndOf="@id/adView"
+            app:layout_constraintStart_toEndOf="@id/ivBannerImage"
+            app:layout_constraintStart_toStartOf="@id/tvBannerTitle"
+            app:layout_constraintTop_toBottomOf="@id/tvBannerTitle" />
 
         <View
             android:id="@+id/myAccountView"
@@ -81,10 +87,21 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/all_account_look"
+            android:layout_marginEnd="8dp"
             android:textColor="@color/blue_500"
             app:layout_constraintBottom_toBottomOf="@id/tvMyAccount"
-            app:layout_constraintEnd_toEndOf="@id/myAccountView"
+            app:layout_constraintEnd_toStartOf="@id/ivArrow"
             app:layout_constraintTop_toTopOf="@id/tvMyAccount" />
+
+        <ImageView
+            android:id="@+id/ivArrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_right_blue_arrow"
+            android:layout_marginEnd="18dp"
+            app:layout_constraintBottom_toBottomOf="@id/tvAllAccount"
+            app:layout_constraintEnd_toEndOf="@id/myAccountView"
+            app:layout_constraintTop_toTopOf="@id/tvAllAccount" />
 
         <androidx.viewpager2.widget.ViewPager2
             android:id="@+id/vpMyAccount"
@@ -412,6 +429,40 @@
                 tools:ignore="MissingConstraints" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <ImageView
+            android:id="@+id/ivHomeChange"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="58dp"
+            android:src="@drawable/ic_home_change_button"
+            app:layout_constraintEnd_toStartOf="@id/ivShake"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/clPrivacyMenu" />
+
+        <ImageView
+            android:id="@+id/ivShake"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="13dp"
+            android:src="@drawable/ic_shake_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/ivHomeChange"
+            app:layout_constraintTop_toTopOf="@id/ivHomeChange" />
+
+        <ImageView
+            android:id="@+id/ivEasyHome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="24dp"
+            android:src="@drawable/ic_easy_home"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ivHomeChange" />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
