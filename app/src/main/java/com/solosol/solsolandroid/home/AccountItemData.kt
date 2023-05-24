@@ -1,4 +1,4 @@
-package com.solosol.solsolandroid
+package com.solosol.solsolandroid.home
 
 data class AccountItemData(
     val accountNumber: String,

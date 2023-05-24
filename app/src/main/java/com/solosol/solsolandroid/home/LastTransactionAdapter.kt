@@ -1,4 +1,4 @@
-package com.solosol.solsolandroid
+package com.solosol.solsolandroid.home
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

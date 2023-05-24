@@ -1,4 +1,4 @@
-package com.solosol.solsolandroid
+package com.solosol.solsolandroid.home
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.lifecycleScope
+import com.solosol.solsolandroid.ApiFactory
 import com.solosol.solsolandroid.databinding.FragmentHomeBinding
 import kotlinx.coroutines.launch
 

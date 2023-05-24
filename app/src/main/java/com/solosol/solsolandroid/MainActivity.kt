@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.commit
 import com.solosol.solsolandroid.databinding.ActivityMainBinding
+import com.solosol.solsolandroid.home.HomeFragment
 
 class MainActivity : AppCompatActivity() {
 

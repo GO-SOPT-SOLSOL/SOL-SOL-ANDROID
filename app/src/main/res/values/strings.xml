@@ -25,4 +25,6 @@
     <string name="co_privacy">공동인증서</string>
     <string name="transfer">이체</string>
     <string name="hey_young">헤이영 머니박스</string>
+    <string name="who_send">누구에게 보낼까요?</string>
+    <string name="search_hint">받는 사람 이름, 계좌번호, 은행 검색</string>
 </resources>

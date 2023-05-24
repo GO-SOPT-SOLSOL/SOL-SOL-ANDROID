@@ -1,4 +1,4 @@
-package com.solosol.solsolandroid
+package com.solosol.solsolandroid.home
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -16,7 +16,6 @@ class HomeViewPagerAdapter :
         fun bind(item: AccountItemData) {
             itemView.run {
                 binding.rvLastTransaction.adapter = lastTransactionAdapter
-
                 lastTransactionAdapter.submitList(item.lastPostList)
             }
         }
