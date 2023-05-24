@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingHorizontal="20dp"
+    tools:context=".Transfer2Activity">
+
+    <TextView
+        android:id="@+id/tv_recipient"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="95dp"
+        android:gravity="top"
+        android:lineSpacingExtra="-6sp"
+        android:text="함선아님께"
+        android:textAppearance="@style/Subhead3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_transfer_account"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="7dp"
+        android:text="카카오뱅크 3333"
+        android:textAppearance="@style/Subhead2"
+        android:textColor="#575C61"
+        app:layout_constraintStart_toStartOf="@id/tv_recipient"
+        app:layout_constraintTop_toBottomOf="@id/tv_recipient" />
+
+    <TextView
+        android:id="@+id/tv_how_much_to_spend"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_marginTop="12dp"
+        android:text="얼마를 보낼까요?"
+        android:textAppearance="@style/Display4"
+        android:textColor="#121518"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_transfer_account" />
+
+    <EditText
+        android:id="@+id/et_enter_amount"
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="71dp"
+        android:hint="금액을 입력하세요"
+        android:background="@null"
+        android:windowSoftInputMode="adjustPan"
+        android:cursorVisible="false"
+        android:text=""
+        android:textAppearance="@style/Display6_light"
+        android:textColor="#121518"
+        android:textColorHint="#BAC1C8"
+        android:textIsSelectable="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_how_much_to_spend" />
+
+    <TextView
+        android:id="@+id/tv_locale_amount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="1만원"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/et_enter_amount" />
+
+    <!--    <View-->
+    <!--        android:id="@+id/shape_myaccount"-->
+    <!--        android:layout_width="0dp"-->
+    <!--        android:layout_height="40dp"-->
+    <!--        android:layout_marginHorizontal="20dp"-->
+    <!--        android:layout_marginTop="58dp"-->
+    <!--        android:background="@drawable/rectangle_gray50_fill_18"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toBottomOf="@id/tv_locale_amount">-->
+
+    <RelativeLayout
+        android:id="@+id/shape_myaccount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="58dp"
+        android:background="@drawable/rectangle_gray50_fill_18"
+        android:padding="13dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_locale_amount">
+
+        <TextView
+            android:id="@+id/tv_bank_and_account"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="신한 110-359-961307"
+            android:textAppearance="@style/Body4" />
+
+        <TextView
+            android:id="@+id/tv_amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="11dp"
+            android:layout_toRightOf="@+id/tv_bank_and_account"
+            android:text="3,773,140원"
+            android:textAppearance="@style/Body3" />
+
+        <ImageView
+            android:id="@+id/iv_goto_my_account"
+            android:layout_width="14dp"
+            android:layout_height="18dp"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/ic_arrow_right" />
+
+    </RelativeLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button_andr"
+        android:layout_width="58dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/btn_transfer_money_unit"
+        android:clipToOutline="true"
+        android:text="1만"
+        android:textAppearance="@style/Body3"
+        android:textColor="#306FE1"
+        app:layout_constraintStart_toStartOf="@id/shape_myaccount"
+        app:layout_constraintTop_toBottomOf="@id/shape_myaccount" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button_andr_2"
+        android:layout_width="58dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="14dp"
+        android:background="@drawable/btn_transfer_money_unit"
+        android:clipToOutline="true"
+        android:text="5만"
+        android:textAppearance="@style/Body3"
+        android:textColor="#306FE1"
+        app:layout_constraintStart_toEndOf="@id/button_andr"
+        app:layout_constraintTop_toBottomOf="@id/shape_myaccount" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button_andr_3"
+        android:layout_width="58dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="14dp"
+        android:background="@drawable/btn_transfer_money_unit"
+        android:clipToOutline="true"
+        android:text="10만"
+        android:textAppearance="@style/Body3"
+        android:textColor="#306FE1"
+        app:layout_constraintStart_toEndOf="@id/button_andr_2"
+        app:layout_constraintTop_toBottomOf="@id/shape_myaccount" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button_andr_4"
+        android:layout_width="58dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="14dp"
+        android:background="@drawable/btn_transfer_money_unit"
+        android:clipToOutline="true"
+        android:text="100만"
+        android:textAppearance="@style/Body3"
+        android:textColor="#306FE1"
+        app:layout_constraintStart_toEndOf="@id/button_andr_3"
+        app:layout_constraintTop_toBottomOf="@id/shape_myaccount" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button_andr_5"
+        android:layout_width="58dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="14dp"
+        android:background="@drawable/btn_transfer_money_unit"
+        android:clipToOutline="true"
+        android:text="전액"
+        android:textAppearance="@style/Body3"
+        android:textColor="#306FE1"
+        app:layout_constraintStart_toEndOf="@id/button_andr_4"
+        app:layout_constraintTop_toBottomOf="@id/shape_myaccount" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button_keypad_1"
+        android:layout_width="102dp"
+        android:layout_height="46dp"
+
+        android:layout_marginTop="20dp"
+        android:background="@android:color/transparent"
+        android:text="1"
+        android:textAppearance="@style/Display4"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/button_andr" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button_keypad_2"
+        android:layout_width="102dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="6dp"
+        android:layout_marginTop="20dp"
+        android:background="@android:color/transparent"
+        android:text="2"
+        android:textAppearance="@style/Display4"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toEndOf="@id/button_keypad_1"
+        app:layout_constraintTop_toBottomOf="@id/button_andr" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button_keypad_3"
+        android:layout_width="102dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="6dp"
+        android:layout_marginTop="20dp"
+        android:background="@android:color/transparent"
+        android:text="3"
+        android:textAppearance="@style/Display4"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toEndOf="@id/button_keypad_2"
+        app:layout_constraintTop_toBottomOf="@id/button_andr" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button_keypad_4"
+        android:layout_width="102dp"
+        android:layout_height="46dp"
+        android:background="@android:color/transparent"
+        android:text="4"
+        android:textAppearance="@style/Display4"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toStartOf="@id/button_keypad_1"
+        app:layout_constraintTop_toBottomOf="@id/button_keypad_1" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button_keypad_5"
+        android:layout_width="102dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="6dp"
+        android:background="@android:color/transparent"
+        android:text="5"
+        android:textAppearance="@style/Display4"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toEndOf="@id/button_keypad_4"
+        app:layout_constraintTop_toBottomOf="@id/button_keypad_2" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button_keypad_6"
+        android:layout_width="102dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="6dp"
+        android:background="@android:color/transparent"
+        android:text="6"
+        android:textAppearance="@style/Display4"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toEndOf="@id/button_keypad_5"
+        app:layout_constraintTop_toBottomOf="@id/button_keypad_3" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button_keypad_7"
+        android:layout_width="102dp"
+        android:layout_height="46dp"
+        android:background="@android:color/transparent"
+        android:text="7"
+        android:textAppearance="@style/Display4"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toStartOf="@id/button_keypad_4"
+        app:layout_constraintTop_toBottomOf="@id/button_keypad_4" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button_keypad_8"
+        android:layout_width="102dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="6dp"
+        android:background="@android:color/transparent"
+        android:text="8"
+        android:textAppearance="@style/Display4"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toEndOf="@id/button_keypad_7"
+        app:layout_constraintTop_toBottomOf="@id/button_keypad_5" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button_keypad_9"
+        android:layout_width="102dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="6dp"
+        android:background="@android:color/transparent"
+        android:text="9"
+        android:textAppearance="@style/Display4"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toEndOf="@id/button_keypad_8"
+        app:layout_constraintTop_toBottomOf="@id/button_keypad_6" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button_keypad_00"
+        android:layout_width="102dp"
+        android:layout_height="46dp"
+        android:background="@android:color/transparent"
+        android:text="00"
+        android:textAppearance="@style/Display4"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toStartOf="@id/button_keypad_7"
+        app:layout_constraintTop_toBottomOf="@id/button_keypad_7" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button_keypad_0"
+        android:layout_width="102dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="6dp"
+        android:background="@android:color/transparent"
+        android:text="0"
+        android:textAppearance="@style/Display4"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toEndOf="@id/button_keypad_00"
+        app:layout_constraintTop_toBottomOf="@id/button_keypad_8" />
+
+    <ImageButton
+        android:id="@+id/button_keypad_back"
+        android:layout_width="102dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="6dp"
+        android:background="@android:color/transparent"
+        android:src="@drawable/ic_backspace"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toEndOf="@id/button_keypad_0"
+        app:layout_constraintTop_toBottomOf="@id/button_keypad_9" />
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_next_button"
+        android:layout_width="0dp"
+        android:layout_height="52dp"
+        android:layout_marginHorizontal="20dp"
+        android:background="@color/blue_500"
+        android:clipToOutline="true"
+        android:text="다음"
+        android:textAppearance="@style/Headline"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/button_keypad_00" />
+
+    <!--    <ImageButton-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:src="@drawable/ic_home"-->
+
+
+    <!--    <ImageView-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
