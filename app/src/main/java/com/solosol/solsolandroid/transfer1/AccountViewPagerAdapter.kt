@@ -1,11 +1,12 @@
 package com.solosol.solsolandroid.transfer1
 
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
 
 private const val NUM_TABS = 3
 
-class AccountViewPagerAdapter(fragment: Fragment) : FragmentStateAdapter(fragment) {
+class AccountViewPagerAdapter(fragment: FragmentActivity) : FragmentStateAdapter(fragment) {
 
     override fun getItemCount(): Int {
         return NUM_TABS

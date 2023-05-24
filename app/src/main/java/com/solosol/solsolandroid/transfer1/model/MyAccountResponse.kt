@@ -1,0 +1,33 @@
+package com.solosol.solsolandroid.transfer1.model
+
+
+import kotlinx.serialization.SerialName
+import kotlinx.serialization.Serializable
+
+@Serializable
+data class MyAccountResponse(
+    @SerialName("data")
+    val `data`: List<Data?>? = null,
+    @SerialName("message")
+    val message: String? = null,
+    @SerialName("status")
+    val status: Int? = null,
+    @SerialName("success")
+    val success: Boolean? = null
+) {
+    @Serializable
+    data class Data(
+        @SerialName("accountNumber")
+        val accountNumber: String? = null,
+        @SerialName("balance")
+        val balance: Int? = null,
+        @SerialName("bank")
+        val bank: String? = null,
+        @SerialName("id")
+        val id: Int? = null,
+        @SerialName("memberId")
+        val memberId: Int? = null,
+        @SerialName("name")
+        val name: String? = null
+    )
+}
