@@ -48,7 +48,7 @@
         app:layout_constraintTop_toBottomOf="@+id/tv_user_name_transfer3" />
 
     <TextView
-        android:id="@+id/tv_account_number_transfer3"
+        android:id="@+id/tv_senderAccount_transfer3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/transfer3_account_number"
@@ -67,7 +67,7 @@
         android:theme="@style/Display5"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_account_number_transfer3" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_senderAccount_transfer3" />
 
     <TextView
         android:id="@+id/tv_send_money_messeage_transfer3"
@@ -81,7 +81,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_send_money_transfer3" />
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/ll_bank_transfer3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -98,43 +98,62 @@
         app:layout_constraintTop_toBottomOf="@+id/tv_send_money_messeage_transfer3">
 
         <TextView
+            android:id="@+id/tv_bank_transfer3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="신한"
             android:textColor="@color/gray_600"
-            android:theme="@style/Body4" />
+            android:theme="@style/Body4"
+            app:layout_constraintStart_toStartOf="@+id/ll_bank_transfer3"
+            app:layout_constraintTop_toTopOf="@+id/ll_bank_transfer3"
+            app:layout_constraintBottom_toBottomOf="@+id/ll_bank_transfer3"/>
 
         <TextView
+            android:id="@+id/tv_number_transfer3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
             android:text="110-345-961307"
             android:textColor="@color/gray_600"
-            android:theme="@style/Body2" />
+            android:theme="@style/Body2"
+            app:layout_constraintLeft_toRightOf="@+id/tv_bank_transfer3"
+            app:layout_constraintTop_toTopOf="@+id/ll_bank_transfer3"
+            app:layout_constraintBottom_toBottomOf="@+id/ll_bank_transfer3"/>
 
         <TextView
+            android:id="@+id/tv_price_transfer3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="11dp"
             android:text="3,773,400"
             android:textColor="@color/gray_600"
-            android:theme="@style/Body3" />
+            android:theme="@style/Body3"
+            app:layout_constraintLeft_toRightOf="@+id/tv_number_transfer3"
+            app:layout_constraintTop_toTopOf="@+id/ll_bank_transfer3"
+            app:layout_constraintBottom_toBottomOf="@+id/ll_bank_transfer3"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="원"
             android:textColor="@color/gray_600"
-            android:theme="@style/Body3" />
+            android:theme="@style/Body3"
+            app:layout_constraintLeft_toRightOf="@+id/tv_price_transfer3"
+            app:layout_constraintTop_toTopOf="@+id/ll_bank_transfer3"
+            app:layout_constraintBottom_toBottomOf="@+id/ll_bank_transfer3"
+            />
 
         <androidx.appcompat.widget.AppCompatImageButton
-            android:layout_width="14dp"
-            android:layout_height="14dp"
-            android:layout_marginLeft="80dp"
+            android:layout_width="0dp"
+            android:layout_height="17dp"
+            android:layout_gravity="end"
             android:adjustViewBounds="true"
             android:backgroundTint="@color/white"
-            android:src="@drawable/icon_arrow_right" />
-    </LinearLayout>
+            android:src="@drawable/icon_arrow_right"
+            app:layout_constraintTop_toTopOf="@+id/ll_bank_transfer3"
+            app:layout_constraintBottom_toBottomOf="@+id/ll_bank_transfer3"
+            app:layout_constraintEnd_toEndOf="@+id/ll_bank_transfer3"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/cl_recipient_transfer3"
@@ -149,6 +168,7 @@
         app:layout_constraintTop_toBottomOf="@+id/ll_bank_transfer3">
 
         <TextView
+            android:id="@+id/tv_recipient_transfer3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="15dp"
@@ -157,6 +177,16 @@
             android:theme="@style/Body6"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/edt_receiver_memo_transfer3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="90dp"
+            android:background="@null"
+            app:layout_constraintLeft_toRightOf="@+id/tv_recipient_transfer3"
+            app:layout_constraintTop_toTopOf="parent"/>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -171,6 +201,7 @@
         app:layout_constraintTop_toBottomOf="@+id/cl_recipient_transfer3">
 
         <TextView
+            android:id="@+id/tv_passbook_memo_transfer3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="15dp"
@@ -179,6 +210,16 @@
             android:theme="@style/Body6"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/edt_transfer_memo_transfer3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="90dp"
+            android:background="@null"
+            app:layout_constraintLeft_toRightOf="@+id/tv_passbook_memo_transfer3"
+            app:layout_constraintTop_toTopOf="parent"/>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -202,6 +243,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
+            android:id="@+id/tv_charge_transfer3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/transfer3_free"
@@ -239,30 +281,31 @@
         android:id="@+id/btn_plus_send_transfer3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
         android:layout_marginBottom="15dp"
         android:background="@drawable/rectangle_round_12"
         android:backgroundTint="@color/gray_100"
-        android:paddingHorizontal="38dp"
+        android:paddingHorizontal="45dp"
         android:text="@string/transfer3_plus_send"
         android:textColor="@color/black"
         android:theme="@style/Headline"
+        app:layout_constraintEnd_toStartOf="@id/btn_send_transfer3"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_send_transfer3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="8dp"
         android:layout_marginBottom="15dp"
-        android:background="@drawable/rectangle_round_12"
+        android:background="@drawable/ripple_custom_transfer3"
         android:backgroundTint="@color/blue_500"
-        android:paddingHorizontal="38dp"
+        android:paddingHorizontal="58dp"
         android:text="@string/transfer3_send"
         android:textColor="@color/white"
         android:theme="@style/Headline"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toRightOf="@+id/btn_plus_send_transfer3" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btn_plus_send_transfer3" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
