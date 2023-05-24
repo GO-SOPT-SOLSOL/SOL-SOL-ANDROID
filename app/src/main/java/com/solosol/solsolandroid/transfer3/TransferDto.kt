@@ -14,9 +14,9 @@ data class RequestTransferDto(
     @SerialName("number")
     val number: String,
     @SerialName("transferMemo")
-    val transferMemo: String,
+    val transferMemo: String?,
     @SerialName("receiverMemo")
-    val receiverMemo: String,
+    val receiverMemo: String?,
     @SerialName("charge")
     val charge: Int,
 )

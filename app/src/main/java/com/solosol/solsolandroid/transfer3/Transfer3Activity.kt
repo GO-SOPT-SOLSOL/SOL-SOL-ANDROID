@@ -8,9 +8,6 @@ import androidx.lifecycle.lifecycleScope
 import com.google.android.material.snackbar.Snackbar
 import com.solosol.solsolandroid.databinding.ActivityTransfer3Binding
 import kotlinx.coroutines.launch
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
 
 class Transfer3Activity : AppCompatActivity() {
     private lateinit var binding: ActivityTransfer3Binding
@@ -51,7 +48,7 @@ class Transfer3Activity : AppCompatActivity() {
             RequestTransferDto(
                 1,
                 tvPriceTransfer3.text.toString().replace(",", "").toInt(),
-                tvBankTransfer3.text.toString(),
+                "HANA",
                 tvNumberTransfer3.text.toString(),
                 edtTransferMemoTransfer3.text.toString(),
                 edtReceiverMemoTransfer3.text.toString(),
