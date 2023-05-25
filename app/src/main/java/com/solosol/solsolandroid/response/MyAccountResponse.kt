@@ -5,9 +5,9 @@ import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
 @Serializable
-data class AccountInfoResponse(
+data class MyAccountResponse(
     @SerialName("data")
-    val `data`: Data? = null,
+    val data: Data? = null,
     @SerialName("message")
     val message: String? = null,
     @SerialName("status")
@@ -17,19 +17,19 @@ data class AccountInfoResponse(
 ) {
     @Serializable
     data class Data(
-        @SerialName("id")
-        val id: Integer,
-        @SerialName("memberId")
-        val memberId: Integer,
-        @SerialName("bank")
+            @SerialName("id")
+        val id: Int,
+            @SerialName("memberId")
+        val memberId: Int,
+            @SerialName("bank")
         val bank: String,
-        @SerialName("accountNumber")
+            @SerialName("accountNumber")
         val accountNumber: String,
-        @SerialName("balance")
-        val balance: Integer,
-        @SerialName("kind")
+            @SerialName("balance")
+        val balance: Int,
+            @SerialName("kind")
         val kind: String,
-        @SerialName("name")
+            @SerialName("name")
         val name: String,
     )
 }

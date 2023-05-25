@@ -6,12 +6,14 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import com.google.android.material.snackbar.Snackbar
+import com.solosol.solsolandroid.ServicePool
 import com.solosol.solsolandroid.databinding.ActivityTransfer3Binding
+import com.solosol.solsolandroid.response.RequestTransferDto
 import kotlinx.coroutines.launch
 
 class Transfer3Activity : AppCompatActivity() {
     private lateinit var binding: ActivityTransfer3Binding
-    private val transferService = ServicePool.transferService
+    private val solService = ServicePool.solService
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -31,7 +33,7 @@ class Transfer3Activity : AppCompatActivity() {
         val requestTransferDto: RequestTransferDto = requestTransferDto()
 
         lifecycleScope.launch {
-            val response = transferService.postTransfer(requestTransferDto)
+            val response = solService.postTransfer(requestTransferDto)
             if (response.isSuccessful) {
                 Log.d("Transfer 서버연결", "onResponse: ${response.message()}")
                 Toast.makeText(this@Transfer3Activity, "성공", Toast.LENGTH_SHORT).show()

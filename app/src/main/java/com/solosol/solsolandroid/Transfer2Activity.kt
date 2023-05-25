@@ -1,10 +1,9 @@
 package com.solosol.solsolandroid
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import com.solosol.solsolandroid.databinding.ActivityTransfer2Binding
-import com.solosol.solsolandroid.response.AccountInfoResponse
 import kotlinx.coroutines.launch
 import java.math.BigDecimal
 import java.text.DecimalFormat
@@ -103,7 +102,7 @@ class Transfer2Activity : AppCompatActivity() {
 
     private fun initAccount(accountId: String, memberId: Int) {
         lifecycleScope.launch {
-            val response = ApiFactory.solService.getAccountInfo(accountId, memberId)
+            val response = ServicePool.solService.getAccountInfo(accountId, memberId)
             if (response.isSuccessful) {
                 val accountInfo = response.body()?.data
                 binding.run {

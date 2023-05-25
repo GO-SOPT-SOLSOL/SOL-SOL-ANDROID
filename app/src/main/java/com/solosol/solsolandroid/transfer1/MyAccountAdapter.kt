@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.solosol.solsolandroid.databinding.ItemMyAccountListBinding
-import com.solosol.solsolandroid.transfer1.model.MyAccountResponse
+import com.solosol.solsolandroid.response.MyAccountResponse
 
 class MyAccountAdapter : ListAdapter<MyAccountResponse.Data, MyAccountAdapter.ViewHolder>(diffUtil) {
 

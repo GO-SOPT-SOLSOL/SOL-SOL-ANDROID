@@ -1,4 +1,4 @@
-package com.solosol.solsolandroid.transfer3
+package com.solosol.solsolandroid.response
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
@@ -19,14 +19,4 @@ data class RequestTransferDto(
     val receiverMemo: String?,
     @SerialName("charge")
     val charge: Int,
-)
-
-@Serializable
-data class ResponseTransferDto(
-    @SerialName("status")
-    val status: Int,
-    @SerialName("success")
-    val success: Boolean,
-    @SerialName("message")
-    val message: String,
 )
