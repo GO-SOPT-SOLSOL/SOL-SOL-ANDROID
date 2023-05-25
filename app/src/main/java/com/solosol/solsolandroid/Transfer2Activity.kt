@@ -2,7 +2,10 @@ package com.solosol.solsolandroid
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.lifecycle.lifecycleScope
 import com.solosol.solsolandroid.databinding.ActivityTransfer2Binding
+import com.solosol.solsolandroid.response.AccountInfoResponse
+import kotlinx.coroutines.launch
 import java.math.BigDecimal
 import java.text.DecimalFormat
 import kotlin.math.floor
@@ -98,12 +101,27 @@ class Transfer2Activity : AppCompatActivity() {
         this.updateEtEnterAmount()
     }
 
+    private fun initAccount(accountId: String, memberId: Int) {
+        lifecycleScope.launch {
+            val response = ApiFactory.solService.getAccountInfo(accountId, memberId)
+            if (response.isSuccessful) {
+                val accountInfo = response.body()?.data
+                binding.run {
+                    val dec = DecimalFormat("#,###")
+                    tvBankAndAccount.text = "${accountInfo?.bank?.orEmpty()} ${accountInfo?.accountNumber?.orEmpty()}"
+                    tvAmount.text = "${dec.format(accountInfo?.balance ?: 0)}원"
+                }
+            }
+        }
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityTransfer2Binding.inflate(layoutInflater)
         binding.etEnterAmount.showSoftInputOnFocus = false
-        this.updateEtEnterAmount()
         setContentView(binding.root)
+        this.updateEtEnterAmount()
+        this.initAccount("1", 1)
         binding.buttonKeypad1.setOnClickListener {
             this.appendEnterAmount("1")
         }
