@@ -9,8 +9,8 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:usesCleartextTraffic="true"
-        android:theme="@style/Theme.SolSolAndroid">
+        android:theme="@style/Theme.SolSolAndroid"
+        android:usesCleartextTraffic="true">
 
         <activity
             android:name=".MainActivity"
@@ -22,14 +22,15 @@
             </intent-filter>
         </activity>
 
-        <activity android:name= ".transfer3.Transfer3Activity"
+        <activity
+            android:name=".transfer3.Transfer3Activity"
             android:exported="false">
 
         </activity>
         <activity
             android:name=".Transfer2Activity"
-            android:exported="true">
-        </activity>
+            android:exported="true"></activity>
+
     </application>
 
 </manifest>
