@@ -30,7 +30,7 @@ class HomeViewPagerAdapter(
                     val dec = DecimalFormat("#,###")
                     tvPageTitle.text = item.name
                     tvAccountNumber.text = item.accountNumber
-                    tvMoney.text = "${dec.format(item.balance)}원"
+                    tvMoney.text = "${dec.format(item.balance?.toBigDecimal())}원"
                     val imageResource = Bank.valueOf(item.bank.toString()).imageResourceId
                     ivBankLogo.setImageResource(imageResource)
                 }

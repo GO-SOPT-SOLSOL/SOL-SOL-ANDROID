@@ -116,7 +116,7 @@ class Transfer2Activity : AppCompatActivity() {
                     val dec = DecimalFormat("#,###")
                     tvBankAndAccount.text =
                         "${accountInfo?.bank?.orEmpty()} ${accountInfo?.accountNumber?.orEmpty()}"
-                    tvAmount.text = "${dec.format(accountInfo?.balance ?: 0)}원"
+                    tvAmount.text = "${dec.format(accountInfo?.balance?.toBigDecimal() ?: 0)}원"
                     myAccountNumber = accountInfo?.accountNumber.orEmpty()
                 }
             }

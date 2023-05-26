@@ -53,7 +53,7 @@ class Transfer3Activity : AppCompatActivity() {
                 with(binding) {
                     tvBankTransfer3.text = response.body()?.data?.bank ?: ""
                     tvNumberTransfer3.text = response.body()?.data?.accountNumber ?: ""
-                    tvPriceTransfer3.text = response.body()?.data?.balance.toString()
+                    tvPriceTransfer3.text = response.body()?.data?.balance?.toBigDecimal()?.toString()
                 }
             }
         }
@@ -86,7 +86,7 @@ class Transfer3Activity : AppCompatActivity() {
         return with(binding) {
             RequestTransferDto(
                 1,
-                tvPriceTransfer3.text.toString().replace(",", "").toInt(),
+                tvPriceTransfer3.text.toString().replace(",", "").toLong(),
                 "KAKAO",
                 tvNumberTransfer3.text.toString(),
                 edtTransferMemoTransfer3.text.toString(),
