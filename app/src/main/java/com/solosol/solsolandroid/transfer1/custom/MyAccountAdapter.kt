@@ -1,13 +1,16 @@
-package com.solosol.solsolandroid.transfer1
+package com.solosol.solsolandroid.transfer1.custom
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.solosol.solsolandroid.Bank
 import com.solosol.solsolandroid.databinding.ItemMyAccountListBinding
-import com.solosol.solsolandroid.response.MyAccountResponse
+import com.solosol.solsolandroid.response.MyAccountListResponse
 
-class MyAccountAdapter : ListAdapter<MyAccountResponse.Data, MyAccountAdapter.ViewHolder>(diffUtil) {
+class MyAccountAdapter : ListAdapter<MyAccountListResponse.Data, MyAccountAdapter.ViewHolder>(
+    diffUtil
+) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return ViewHolder(
@@ -24,26 +27,29 @@ class MyAccountAdapter : ListAdapter<MyAccountResponse.Data, MyAccountAdapter.Vi
     }
 
     class ViewHolder(private val binding: ItemMyAccountListBinding) : RecyclerView.ViewHolder(binding.root) {
-        fun bind(item: MyAccountResponse.Data) {
+        fun bind(item: MyAccountListResponse.Data) {
             itemView.run {
-                binding.tvBankName.text = item.bank
+                item.bank?.let {
+                    binding.ivBankLogo.setImageResource(Bank.valueOf(it).imageResourceId)
+                }
+                binding.tvBankName.text = item.name
                 binding.tvAccountNumber.text = item.accountNumber
             }
         }
     }
 
     companion object {
-        val diffUtil = object : androidx.recyclerview.widget.DiffUtil.ItemCallback<MyAccountResponse.Data>() {
+        val diffUtil = object : androidx.recyclerview.widget.DiffUtil.ItemCallback<MyAccountListResponse.Data>() {
             override fun areItemsTheSame(
-                oldItem: MyAccountResponse.Data,
-                newItem: MyAccountResponse.Data
+                oldItem: MyAccountListResponse.Data,
+                newItem: MyAccountListResponse.Data
             ): Boolean {
                 return oldItem.accountNumber == newItem.accountNumber
             }
 
             override fun areContentsTheSame(
-                oldItem: MyAccountResponse.Data,
-                newItem: MyAccountResponse.Data
+                oldItem: MyAccountListResponse.Data,
+                newItem: MyAccountListResponse.Data
             ): Boolean {
                 return oldItem == newItem
             }

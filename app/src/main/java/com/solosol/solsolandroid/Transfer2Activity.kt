@@ -1,9 +1,11 @@
 package com.solosol.solsolandroid
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import com.solosol.solsolandroid.databinding.ActivityTransfer2Binding
+import com.solosol.solsolandroid.transfer3.Transfer3Activity
 import kotlinx.coroutines.launch
 import java.math.BigDecimal
 import java.text.DecimalFormat
@@ -12,6 +14,11 @@ import kotlin.math.floor
 class Transfer2Activity : AppCompatActivity() {
     private lateinit var binding: ActivityTransfer2Binding
     private var enterAmount: String = ""
+    private var myAccountNumber: String = ""
+
+    private val accountNumber by lazy { intent.getStringExtra("accountNumber") }
+    private val userName by lazy { intent.getStringExtra("userName") }
+    private val bank by lazy { intent.getStringExtra("bank") }
 
     private fun getKoreaPriceString(): String {
         var remainAmount = this.enterAmount.toBigDecimal();
@@ -107,8 +114,10 @@ class Transfer2Activity : AppCompatActivity() {
                 val accountInfo = response.body()?.data
                 binding.run {
                     val dec = DecimalFormat("#,###")
-                    tvBankAndAccount.text = "${accountInfo?.bank?.orEmpty()} ${accountInfo?.accountNumber?.orEmpty()}"
+                    tvBankAndAccount.text =
+                        "${accountInfo?.bank?.orEmpty()} ${accountInfo?.accountNumber?.orEmpty()}"
                     tvAmount.text = "${dec.format(accountInfo?.balance ?: 0)}원"
+                    myAccountNumber = accountInfo?.accountNumber.orEmpty()
                 }
             }
         }
@@ -171,6 +180,28 @@ class Transfer2Activity : AppCompatActivity() {
         }
         binding.buttonAndr5.setOnClickListener {
             this.sumEnteredAmountAndr(BigDecimal(3773140))
+        }
+
+        binding.ivBack.setOnClickListener {
+            finish()
+        }
+
+        binding.tvRecipient.text = userName
+        bank?.let {
+            binding.tvTransferAccount.text = "${BankName.valueOf(it)} $accountNumber"
+        }
+
+        binding.btnNextButton.setOnClickListener {
+            Intent(this, Transfer3Activity::class.java).apply {
+                putExtra("accountNumber", accountNumber)
+                putExtra("userName", userName)
+                putExtra("bank", bank)
+                putExtra("amount", enterAmount)
+                putExtra("myAccountNumber", myAccountNumber)
+            }.run {
+                startActivity(this)
+            }
+
         }
     }
 }

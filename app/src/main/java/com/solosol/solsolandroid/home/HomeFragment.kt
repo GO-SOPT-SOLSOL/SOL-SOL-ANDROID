@@ -1,6 +1,7 @@
 package com.solosol.solsolandroid.home
 
 import android.content.Context
+import android.content.Intent
 import android.graphics.Rect
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -14,6 +15,8 @@ import androidx.viewpager2.widget.ViewPager2
 import com.solosol.solsolandroid.R
 import com.solosol.solsolandroid.ServicePool
 import com.solosol.solsolandroid.databinding.FragmentHomeBinding
+import com.solosol.solsolandroid.response.RecentTransferResponse
+import com.solosol.solsolandroid.transfer1.Transfer1Activity
 import kotlinx.coroutines.launch
 
 class HomeFragment : Fragment() {
@@ -21,9 +24,7 @@ class HomeFragment : Fragment() {
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
 
-    private val homeViewPagerAdapter = HomeViewPagerAdapter {
-
-    }
+    private var homeViewPagerAdapter: HomeViewPagerAdapter? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -35,9 +36,19 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        fetchData()
         initBannerData()
-        initViewpager()
-        initAccountData()
+    }
+
+    private fun fetchData() {
+        lifecycleScope.launch {
+            val response = ServicePool.solService.getRecentTransferAccounts(1)
+            if (response.isSuccessful) {
+                response.body()?.data?.let {
+                    initHomeViewPager(it)
+                }
+            }
+        }
     }
 
     private fun initAccountData() {
@@ -45,7 +56,8 @@ class HomeFragment : Fragment() {
             val response = ServicePool.solService.getAccountListInfo()
             if (response.isSuccessful) {
                 val accountList = response.body()?.data
-                homeViewPagerAdapter.submitList(accountList)
+                homeViewPagerAdapter?.submitList(accountList)
+                initViewpager()
             }
         }
     }
@@ -64,7 +76,6 @@ class HomeFragment : Fragment() {
     }
 
     private fun initViewpager() {
-
         val nextItemVisiblePx = resources.getDimension(R.dimen.viewpager_next_item_visible)
         val currentItemHorizontalMarginPx =
             resources.getDimension(R.dimen.viewpager_current_item_horizontal_margin)
@@ -85,6 +96,16 @@ class HomeFragment : Fragment() {
             vpMyAccount.addItemDecoration(itemDecoration)
             indicator.attachTo(vpMyAccount)
         }
+    }
+
+    private fun initHomeViewPager(recentTransferList: RecentTransferResponse.Data) {
+        homeViewPagerAdapter = HomeViewPagerAdapter(
+            recentTransferList = recentTransferList ,
+            transferOnClick = {
+                startActivity(Intent(requireActivity(), Transfer1Activity::class.java))
+            }
+        )
+        initAccountData()
     }
 
     class HorizontalMarginItemDecoration(context: Context, @DimenRes horizontalMarginInDp: Int) :

@@ -3,6 +3,7 @@ package com.solosol.solsolandroid.transfer1
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
+import com.solosol.solsolandroid.transfer1.custom.CustomTabFragment
 
 private const val NUM_TABS = 3
 

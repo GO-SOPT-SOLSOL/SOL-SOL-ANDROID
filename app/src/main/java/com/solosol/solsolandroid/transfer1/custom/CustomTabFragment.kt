@@ -1,4 +1,4 @@
-package com.solosol.solsolandroid.transfer1
+package com.solosol.solsolandroid.transfer1.custom
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.solosol.solsolandroid.ServicePool
 import com.solosol.solsolandroid.databinding.FragmentCustomBinding
 import kotlinx.coroutines.launch
 
@@ -44,7 +45,11 @@ class CustomTabFragment() : Fragment() {
 
     private fun fetchData() {
         lifecycleScope.launch {
-
+            val response = ServicePool.solService.getAccountListInfo()
+            if (response.isSuccessful) {
+                val accountList = response.body()?.data
+                myAccountAdapter?.submitList(accountList)
+            }
         }
     }
 }

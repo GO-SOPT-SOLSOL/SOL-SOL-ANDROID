@@ -8,13 +8,18 @@ import androidx.recyclerview.widget.RecyclerView
 import com.solosol.solsolandroid.Bank
 import com.solosol.solsolandroid.databinding.ItemAccountBinding
 import com.solosol.solsolandroid.response.MyAccountListResponse
+import com.solosol.solsolandroid.response.RecentTransferResponse
 import java.text.DecimalFormat
 
-class HomeViewPagerAdapter(private val transferOnClick: (MyAccountListResponse.Data) -> Unit) :
+class HomeViewPagerAdapter(
+    private val recentTransferList: RecentTransferResponse.Data,
+    private val transferOnClick: (MyAccountListResponse.Data) -> Unit
+) :
     ListAdapter<MyAccountListResponse.Data, HomeViewPagerAdapter.AccountViewHolder>(diffUtil) {
 
     class AccountViewHolder(
         private val binding: ItemAccountBinding,
+        private val recentTransferList: RecentTransferResponse.Data,
         private val transferOnClick: (MyAccountListResponse.Data) -> Unit
     ) :
         RecyclerView.ViewHolder(binding.root) {
@@ -30,7 +35,7 @@ class HomeViewPagerAdapter(private val transferOnClick: (MyAccountListResponse.D
                     ivBankLogo.setImageResource(imageResource)
                 }
                 binding.rvLastTransaction.adapter = lastTransactionAdapter
-//                lastTransactionAdapter.submitList(item)
+                lastTransactionAdapter.submitList(recentTransferList.transfers)
                 setOnClickListener {
                     transferOnClick(item)
                 }
@@ -44,7 +49,8 @@ class HomeViewPagerAdapter(private val transferOnClick: (MyAccountListResponse.D
                 LayoutInflater.from(parent.context),
                 parent,
                 false
-            ), transferOnClick
+            ),recentTransferList,
+            transferOnClick
         )
     }
 

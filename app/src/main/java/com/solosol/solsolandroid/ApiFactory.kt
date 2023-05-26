@@ -1,4 +1,4 @@
-package com.solosol.solsolandroid.transfer3
+package com.solosol.solsolandroid
 
 import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
 import kotlinx.serialization.json.Json
