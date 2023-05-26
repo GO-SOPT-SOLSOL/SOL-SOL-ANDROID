@@ -20,13 +20,23 @@ class Transfer1Activity : AppCompatActivity() {
 
     private val binding by lazy { ActivityTransfer1Binding.inflate(layoutInflater) }
     private val lastTransferListAdapter by lazy {
-        LastTransferListAdapter {
-            Intent(this, Transfer2Activity::class.java).apply {
-                putExtra("accountNumber", it.accountNumber)
-                putExtra("userName", it.name)
-                putExtra("bank", it.bank)
-            }.let(::startActivity)
+        LastTransferListAdapter (
+            onClickItem = {
+                Intent(this, Transfer2Activity::class.java).apply {
+                    putExtra("accountNumber", it.accountNumber)
+                    putExtra("userName", it.name)
+                    putExtra("bank", it.bank)
+                }.let(::startActivity)
+            },
+        onDeleteClick = {
+            lifecycleScope.launch {
+                val response = ServicePool.solService.deleteTransfer(it.accountsId)
+                if (response.isSuccessful) {
+                    fetchData()
+                }
+            }
         }
+            )
     }
     private val tabTitleArray = arrayOf(
         "맞춤",
