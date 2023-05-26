@@ -85,7 +85,11 @@
         <EditText
             android:id="@+id/etSearch"
             android:layout_width="0dp"
-            android:layout_height="50dp"
+            android:layout_height="60dp"
+            android:padding="10dp"
+            android:background="@drawable/shape_radius14_stroke_gray150"
+            android:drawableEnd="@drawable/ic_search"
+            android:drawablePadding="10dp"
             android:layout_marginTop="28dp"
             android:hint="@string/search_hint"
             app:layout_constraintEnd_toEndOf="parent"
