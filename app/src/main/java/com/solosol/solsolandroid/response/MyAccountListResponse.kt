@@ -20,7 +20,7 @@ data class MyAccountListResponse(
             @SerialName("accountNumber")
             val accountNumber: String? = null,
             @SerialName("balance")
-            val balance: Int? = null,
+            val balance: Long? = null,
             @SerialName("bank")
             val bank: String? = null,
             @SerialName("id")

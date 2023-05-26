@@ -26,7 +26,7 @@ data class MyAccountResponse(
             @SerialName("accountNumber")
         val accountNumber: String,
             @SerialName("balance")
-        val balance: Int,
+        val balance: Long,
             @SerialName("kind")
         val kind: String,
             @SerialName("name")

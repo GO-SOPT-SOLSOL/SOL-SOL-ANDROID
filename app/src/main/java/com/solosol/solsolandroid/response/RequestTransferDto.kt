@@ -8,7 +8,7 @@ data class RequestTransferDto(
     @SerialName("senderAccountsId")
     val senderAccountsId: Int,
     @SerialName("price")
-    val price: Int,
+    val price: Long,
     @SerialName("bank")
     val bank: String,
     @SerialName("number")
