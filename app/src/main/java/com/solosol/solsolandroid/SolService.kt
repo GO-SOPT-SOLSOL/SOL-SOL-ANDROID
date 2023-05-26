@@ -6,8 +6,10 @@ import com.solosol.solsolandroid.response.MyAccountResponse
 import com.solosol.solsolandroid.response.RecentTransferResponse
 import com.solosol.solsolandroid.response.RequestTransferDto
 import com.solosol.solsolandroid.response.ResponseTransferDto
+import com.solosol.solsolandroid.response.TransferDeleteResponse
 import retrofit2.Response
 import retrofit2.http.Body
+import retrofit2.http.DELETE
 import retrofit2.http.GET
 import retrofit2.http.POST
 import retrofit2.http.Path
@@ -29,11 +31,16 @@ interface SolService {
 
     @POST("/api/transfers?memberId=1")
     suspend fun postTransfer(
-            @Body request: RequestTransferDto,
+        @Body request: RequestTransferDto,
     ): Response<ResponseTransferDto>
 
     @GET("/api/transfers")
     suspend fun getRecentTransferAccounts(
-            @Query("memberId") memberId: Int,
+        @Query("memberId") memberId: Int,
     ): Response<RecentTransferResponse>
+
+    @DELETE("/api/transfers/{transferId}?memberId=1")
+    suspend fun deleteTransfer(
+        @Path("transferId") transferId: Int,
+    ): Response<TransferDeleteResponse>
 }

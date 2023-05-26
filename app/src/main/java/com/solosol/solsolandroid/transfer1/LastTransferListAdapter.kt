@@ -8,12 +8,18 @@ import com.solosol.solsolandroid.Bank
 import com.solosol.solsolandroid.databinding.ItemLastTransferBinding
 import com.solosol.solsolandroid.response.RecentTransferResponse
 
-class LastTransferListAdapter(private val onClickItem:(RecentTransferResponse.Data.Transfer) -> Unit): ListAdapter<RecentTransferResponse.Data.Transfer, LastTransferListAdapter.LastTransferViewHolder>(diffUtil) {
+class LastTransferListAdapter(
+    private val onClickItem: (RecentTransferResponse.Data.Transfer) -> Unit,
+    private val onDeleteClick: (RecentTransferResponse.Data.Transfer) -> Unit
+) : ListAdapter<RecentTransferResponse.Data.Transfer, LastTransferListAdapter.LastTransferViewHolder>(
+    diffUtil
+) {
 
     class LastTransferViewHolder(
         private val binding: ItemLastTransferBinding,
-        private val onClickItem: (RecentTransferResponse.Data.Transfer) -> Unit
-    ):RecyclerView.ViewHolder(binding.root) {
+        private val onClickItem: (RecentTransferResponse.Data.Transfer) -> Unit,
+        private val onDeleteClick: (RecentTransferResponse.Data.Transfer) -> Unit
+    ) : RecyclerView.ViewHolder(binding.root) {
         fun bind(item: RecentTransferResponse.Data.Transfer) {
             itemView.run {
                 binding.ivBankLogo.setImageResource(Bank.valueOf(item.bank).imageResourceId)
@@ -23,6 +29,9 @@ class LastTransferListAdapter(private val onClickItem:(RecentTransferResponse.Da
 
                 setOnClickListener {
                     onClickItem(item)
+                }
+                binding.ivDelete.setOnClickListener {
+                    onDeleteClick(item)
                 }
             }
         }
@@ -37,7 +46,8 @@ class LastTransferListAdapter(private val onClickItem:(RecentTransferResponse.Da
                 LayoutInflater.from(parent.context),
                 parent,
                 false
-            ), onClickItem
+            ), onClickItem,
+            onDeleteClick
         )
     }
 
@@ -46,12 +56,13 @@ class LastTransferListAdapter(private val onClickItem:(RecentTransferResponse.Da
     }
 
     companion object {
-        val diffUtil = object : androidx.recyclerview.widget.DiffUtil.ItemCallback<RecentTransferResponse.Data.Transfer>() {
+        val diffUtil = object :
+            androidx.recyclerview.widget.DiffUtil.ItemCallback<RecentTransferResponse.Data.Transfer>() {
             override fun areItemsTheSame(
                 oldItem: RecentTransferResponse.Data.Transfer,
                 newItem: RecentTransferResponse.Data.Transfer
             ): Boolean {
-                return oldItem.accountNumber== newItem.accountNumber
+                return oldItem.accountNumber == newItem.accountNumber
             }
 
             override fun areContentsTheSame(
