@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="20dp"
+        tools:context=".transfer1.Transfer1Activity">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/appbar"
+            android:layout_width="0dp"
+            android:layout_height="?actionBarSize"
+            android:background="?colorOnPrimary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/ivBack"
+                style="@style/Headline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="26dp"
+                android:layout_marginBottom="10dp"
+                android:src="@drawable/ic_back_arrow"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/ivMessage"
+                android:layout_width="40dp"
+                android:layout_height="0dp"
+                android:layout_marginEnd="2dp"
+                android:padding="10dp"
+                android:src="@drawable/ic_message"
+                app:layout_constraintBottom_toBottomOf="@id/ivBack"
+                app:layout_constraintDimensionRatio="1"
+                app:layout_constraintEnd_toStartOf="@id/ivMic"
+                app:layout_constraintTop_toTopOf="@id/ivBack" />
+
+            <ImageView
+                android:id="@+id/ivMic"
+                android:layout_width="40dp"
+                android:layout_height="0dp"
+                android:layout_marginEnd="2dp"
+                android:padding="10dp"
+                android:src="@drawable/ic__mic"
+                app:layout_constraintBottom_toBottomOf="@id/ivMessage"
+                app:layout_constraintDimensionRatio="1"
+                app:layout_constraintEnd_toStartOf="@id/ivProfile"
+                app:layout_constraintTop_toTopOf="@id/ivMessage" />
+
+            <ImageView
+                android:id="@+id/ivProfile"
+                android:layout_width="40dp"
+                android:layout_height="0dp"
+                android:layout_marginEnd="2dp"
+                android:padding="10dp"
+                android:src="@drawable/ic_profile"
+                app:layout_constraintBottom_toBottomOf="@id/ivMessage"
+                app:layout_constraintDimensionRatio="1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/ivMessage" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/tvWhoSend"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="33dp"
+            android:text="@string/who_send"
+            android:theme="@style/Display5_long"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/appbar" />
+
+        <EditText
+            android:id="@+id/etSearch"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="28dp"
+            android:hint="@string/search_hint"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvWhoSend" />
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tlAccount"
+            android:layout_width="0dp"
+            android:layout_height="44dp"
+            android:layout_marginTop="13dp"
+            android:background="@drawable/shape_radius8_gray100"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/etSearch"
+            app:tabBackground="@drawable/selector_account_tab"
+            app:tabIndicatorHeight="0dp"
+            app:tabRippleColor="@null"
+            app:tabSelectedTextColor="@color/gray_600"
+            app:tabTextAppearance="@style/Subhead2"
+            app:tabTextColor="@color/gray_400" />
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/vpAccountList"
+            android:layout_width="0dp"
+            android:layout_height="204dp"
+            android:layout_marginTop="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tlAccount" />
+
+        <View
+            android:id="@+id/lineView"
+            android:layout_width="0dp"
+            android:layout_height="8dp"
+            android:layout_marginTop="12dp"
+            android:background="@color/gray_100"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/vpAccountList" />
+
+
+        <TextView
+            android:id="@+id/tvLastTransfer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="최근보낸 사람"
+            android:theme="@style/Headline"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/lineView" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvLastTransferList"
+            android:layout_width="0dp"
+            android:layout_height="148dp"
+            android:layout_marginTop="18dp"
+            android:layout_marginBottom="30dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvLastTransfer" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

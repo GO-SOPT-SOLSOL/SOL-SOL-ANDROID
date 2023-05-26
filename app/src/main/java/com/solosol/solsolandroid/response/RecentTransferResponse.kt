@@ -7,7 +7,7 @@ import kotlinx.serialization.Serializable
 @Serializable
 data class RecentTransferResponse(
     @SerialName("data")
-    val `data`: Data? = null,
+    val data: Data? = null,
     @SerialName("message")
     val message: String? = null,
     @SerialName("status")

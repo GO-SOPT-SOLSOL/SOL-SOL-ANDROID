@@ -3,8 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:paddingHorizontal="20dp"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/shape_radius14_white"
+    android:paddingHorizontal="20dp">
 
     <ImageView
         android:id="@+id/ivBankLogo"
@@ -50,7 +51,7 @@
         android:id="@+id/tvMoney"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="41dp"
+        android:layout_marginTop="31dp"
         android:textColor="@color/gray_600"
         android:theme="@style/Display5"
         app:layout_constraintStart_toStartOf="@id/ivBankLogo"
@@ -76,6 +77,8 @@
         android:paddingHorizontal="35dp"
         android:paddingVertical="10dp"
         android:text="@string/transfer"
+        app:layout_constraintBottom_toTopOf="@id/rvLastTransaction"
+        android:layout_marginBottom="18dp"
         android:textColor="@color/blue_500"
         android:theme="@style/Subhead2"
         app:layout_constraintStart_toStartOf="@id/ivBankLogo"
@@ -100,6 +103,8 @@
         android:layout_width="0dp"
         android:layout_height="43dp"
         android:layout_marginTop="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="18dp"
         android:orientation="horizontal"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintEnd_toEndOf="parent"

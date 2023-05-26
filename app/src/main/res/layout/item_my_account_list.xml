@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/ivBankLogo"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginVertical="22dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@mipmap/ic_launcher_round" />
+
+    <TextView
+        android:id="@+id/tvBankName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="11dp"
+        android:theme="@style/Subhead3"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:maxLines="1"
+        android:ellipsize="end"
+        app:layout_constraintStart_toEndOf="@id/ivBankLogo"
+        app:layout_constraintTop_toTopOf="@id/ivBankLogo"
+        android:textColor="@color/gray_600"
+        app:layout_constraintBottom_toTopOf="@id/tvAccountNumber"
+        tools:text="신한 청년희망적금" />
+
+    <TextView
+        android:id="@+id/tvAccountNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="11dp"
+        android:theme="@style/Body5"
+        android:textColor="@color/gray_400"
+        app:layout_constraintBottom_toBottomOf="@id/ivBankLogo"
+        app:layout_constraintStart_toEndOf="@id/ivBankLogo"
+        app:layout_constraintTop_toBottomOf="@id/tvBankName"
+        tools:text="신한 230-280-338444" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -13,11 +13,13 @@
         android:usesCleartextTraffic="true">
 
         <activity
+            android:name=".transfer1.Transfer1Activity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -25,11 +27,13 @@
         <activity
             android:name=".transfer3.Transfer3Activity"
             android:exported="false">
-
         </activity>
+
         <activity
             android:name=".Transfer2Activity"
-            android:exported="true"></activity>
+            android:exported="true">
+
+        </activity>
 
     </application>
 

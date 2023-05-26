@@ -1,19 +1,25 @@
-package com.solosol.solsolandroid
+package com.solosol.solsolandroid.home
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.solosol.solsolandroid.Bank
 import com.solosol.solsolandroid.databinding.ItemLastAccountBinding
+import com.solosol.solsolandroid.response.RecentTransferResponse
 
 class LastTransactionAdapter :
-    ListAdapter<AccountItemData.PostItem, LastTransactionAdapter.ViewHolder>(diffUtil) {
+    ListAdapter<RecentTransferResponse.Data.Transfer, LastTransactionAdapter.ViewHolder>(diffUtil) {
     class ViewHolder(private val binding: ItemLastAccountBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        fun bind(item: AccountItemData.PostItem) {
+        fun bind(item: RecentTransferResponse.Data.Transfer) {
             itemView.run {
-
+                with(binding) {
+                    ivBankLogo.setImageResource(Bank.valueOf(item.bank).imageResourceId)
+                    tvName.text = item.name
+                    tvMoney.text = item.price.toString()
+                }
             }
         }
     }
@@ -29,21 +35,21 @@ class LastTransactionAdapter :
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-
+        holder.bind(currentList[position])
     }
 
     companion object {
-        val diffUtil = object : DiffUtil.ItemCallback<AccountItemData.PostItem>() {
+        val diffUtil = object : DiffUtil.ItemCallback<RecentTransferResponse.Data.Transfer>() {
             override fun areItemsTheSame(
-                oldItem: AccountItemData.PostItem,
-                newItem: AccountItemData.PostItem
+                oldItem: RecentTransferResponse.Data.Transfer,
+                newItem: RecentTransferResponse.Data.Transfer
             ): Boolean {
-                return oldItem.name == newItem.name
+                return oldItem.accountNumber == newItem.accountNumber
             }
 
             override fun areContentsTheSame(
-                oldItem: AccountItemData.PostItem,
-                newItem: AccountItemData.PostItem
+                oldItem: RecentTransferResponse.Data.Transfer,
+                newItem: RecentTransferResponse.Data.Transfer
             ): Boolean {
                 return oldItem == newItem
             }

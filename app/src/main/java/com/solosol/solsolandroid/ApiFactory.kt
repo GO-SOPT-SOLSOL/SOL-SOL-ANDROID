@@ -3,15 +3,25 @@ package com.solosol.solsolandroid
 import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
 import kotlinx.serialization.json.Json
 import okhttp3.MediaType.Companion.toMediaType
+import okhttp3.OkHttpClient
+import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 
 object ApiFactory {
-    private const val BASE_URL = "http://3.38.1.206"
+    val retrofit: Retrofit by lazy {
+        Retrofit.Builder()
+            .baseUrl("http://3.38.1.206")
+            .addConverterFactory(Json.asConverterFactory("application/json".toMediaType()))
+            .client(okHttpClient)
+            .build()
+    }
 
-    private val retrofit = Retrofit.Builder()
-        .baseUrl(BASE_URL)
-        .addConverterFactory(Json.asConverterFactory("application/json".toMediaType()))
+    private val okHttpClient = OkHttpClient.Builder()
+        .addInterceptor(HttpLoggingInterceptor().apply {
+            level = HttpLoggingInterceptor.Level.BODY
+        })
         .build()
 
-    val solService = retrofit.create(SolService::class.java)
+    inline fun <reified T> create(): T = retrofit.create(T::class.java)
 }
+

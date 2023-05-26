@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="81dp"
     android:layout_height="43dp"
+    android:layout_marginEnd="6dp"
     android:background="@drawable/shape_radius6_gray50">
 
     <ImageView
